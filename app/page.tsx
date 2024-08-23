@@ -41,7 +41,7 @@ export default function Home() {
       <>
          <header className="p-8 text-2xl font-semibold flex justify-between items-center">
             <div>Video Editor</div>
-            <Button onClick={handleExport}>Export Video</Button>
+            <Button onClick={() => {}}>Export Video</Button>
          </header>
          <Separator />
          <main className="container mx-auto p-4">
