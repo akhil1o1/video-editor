@@ -15,27 +15,27 @@ export type TextOverlay = {
 export default function Home() {
    const [textOverlays, setTextOverlays] = useState<TextOverlay[]>([]);
 
-   const handleExport = async () => {
-      try {
-         const response = await fetch("/api/render", {
-            method: "POST",
-            headers: {
-               "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ textOverlays }),
-         });
+  //  const handleExport = async () => {
+  //     try {
+  //        const response = await fetch("/api/render", {
+  //           method: "POST",
+  //           headers: {
+  //              "Content-Type": "application/json",
+  //           },
+  //           body: JSON.stringify({ textOverlays }),
+  //        });
 
-         const result = await response.json();
-         if (result.success) {
-            // Trigger the download of the rendered video
-            window.location.href = result.url;
-         } else {
-            alert("Failed to export video");
-         }
-      } catch (error) {
-         console.error("Error exporting video:", error);
-      }
-   };
+  //        const result = await response.json();
+  //        if (result.success) {
+  //           // Trigger the download of the rendered video
+  //           window.location.href = result.url;
+  //        } else {
+  //           alert("Failed to export video");
+  //        }
+  //     } catch (error) {
+  //        console.error("Error exporting video:", error);
+  //     }
+  //  };
 
    return (
       <>
