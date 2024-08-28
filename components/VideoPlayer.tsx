@@ -37,8 +37,12 @@ export default function VideoPlayer({
       const timestamp = parseInt(formData.get("timestamp") as string, 10);
       const animation = formData.get("animation") as string;
       const font = formData.get("font") as string;
+      const duration = Number(formData.get("duration") as string);
+      
 
-      setTextOverlays([...textOverlays, { text, timestamp, animation, font }]);
+      console.log(duration);
+
+      setTextOverlays([...textOverlays, { text, timestamp, animation, font, duration }]);
       e.currentTarget.reset();
    };
 
@@ -82,6 +86,13 @@ export default function VideoPlayer({
                placeholder="Enter timestamp in seconds"
                required
                max={durationInSeconds}
+            />
+
+            <Input
+               type="number"
+               name="duration"
+               placeholder="Enter overlay duration in seconds"
+               required
             />
 
             <Select name="animation">

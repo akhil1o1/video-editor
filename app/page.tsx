@@ -10,6 +10,7 @@ export type TextOverlay = {
    timestamp: number;
    animation: string;
    font: string;
+   duration : number;
 };
 
 export default function Home() {

@@ -20,9 +20,10 @@ export const MyComposition: React.FC<MyCompositionProps> = ({
          <Video src="/demo.mp4" startFrom={0} className="w-full h-full" />
 
          {/* Render text overlays */}
-         {textOverlays.map(({ text, timestamp, font, animation }, index) => {
+         {textOverlays.map(({ text, timestamp, font, animation, duration }, index) => {
             const startFrame = timestamp * fps;
-            const endFrame = startFrame + fps * 2; // Show text for 2 seconds (60 frames)
+            console.log(typeof(duration), duration);
+            const endFrame = startFrame + fps * duration ; // Show text for 2 seconds (60 frames)
 
             if (frame < startFrame || frame > endFrame) {
                return null; 
